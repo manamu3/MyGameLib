@@ -1,34 +1,16 @@
 #include "FPS.h"
 #include <iostream>
 
-/// <summary>
-/// 画面更新用のフラグ
-/// </summary>
 bool FPS::updateFlag;
 
-/// <summary>
-/// フレームレート
-/// </summary>
 double FPS::frameRate;
 
-/// <summary>
-/// 画面更新間隔の時間
-/// </summary>
 double FPS::deltaTime;
 
-/// <summary>
-/// 実際のFPS
-/// </summary>
 double FPS::actualFPS;
 
-/// <summary>
-/// 周波数
-/// </summary>
 LARGE_INTEGER FPS::freq;
 
-/// <summary>
-/// パフォーマンスカウンタ
-/// </summary>
 LARGE_INTEGER FPS::updateTime;
 
 void FPS::Initialize(const double _frameRate) {

@@ -5,34 +5,22 @@
 class FPS
 {
 private:
-	/// <summary>
-	/// 画面更新用のフラグ
-	/// </summary>
+	// 画面更新用のフラグ
 	static bool updateFlag;
 
-	/// <summary>
-	/// フレームレート
-	/// </summary>
+	// フレームレート
 	static double frameRate;
 
-	/// <summary>
-	/// 画面更新間隔の時間
-	/// </summary>
+	// 画面更新間隔の時間
 	static double deltaTime;
 
-	/// <summary>
-	/// 実際のFPS
-	/// </summary>
+	// 実際のFPS
 	static double actualFPS;
 
-	/// <summary>
-	/// 周波数
-	/// </summary>
+	// 周波数
 	static LARGE_INTEGER freq;
 
-	/// <summary>
-	/// パフォーマンスカウンタ
-	/// </summary>
+	// パフォーマンスカウンタ
 	static LARGE_INTEGER updateTime;
 
 public:

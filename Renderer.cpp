@@ -211,11 +211,6 @@ void Renderer::CreateGraphicsPipeline() {
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D12_APPEND_ALIGNED_ELEMENT, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0},
 	};
 
-	/*ComPtr<ID3DBlob> error;
-	ComPtr<ID3DBlob> vs;
-	ComPtr<ID3DBlob> ps;
-	ComPtr<ID3DBlob> texturePS;*/
-
     std::vector<BYTE> g_BasicVS = {
          68,  88,  66,  67, 255, 154,
          88, 156, 143, 108,  39, 166,
@@ -731,14 +726,6 @@ void Renderer::CreateGraphicsPipeline() {
           0,   0,   0,   0,   0,   0,
           0,   0,   0,   0
     };
-    /*ComPtr<ID3D12ShaderReflection> shaderReflection;
-    device->CreateShader((void*)shaderBytecode.data(), shaderBytecode.size(), nullptr, IID_PPV_ARGS(&shaderReflection));*/
-    //device->CreateShaderResourceView()
-	/*Debugger::ErrorCheck(D3DCompileFromFile(L"BasicVertexShader.cso", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "BasicVS", "vs_5_0",
-		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION, 0, vs.ReleaseAndGetAddressOf(), error.ReleaseAndGetAddressOf()));
-
-	Debugger::ErrorCheck(D3DCompileFromFile(L"TexPixelShader.cso", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "TexturePS", "ps_5_0",
-		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION, 0, texturePS.ReleaseAndGetAddressOf(), error.ReleaseAndGetAddressOf()));*/
 
 	D3D12_RENDER_TARGET_BLEND_DESC blend = {};
 	blend.BlendEnable = false;
@@ -748,9 +735,7 @@ void Renderer::CreateGraphicsPipeline() {
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC desc = {};
 	desc.pRootSignature = rootSignature.Get();
     desc.VS = { g_BasicVS.data(), g_BasicVS.size() };
-    //CD3DX12_SHADER_BYTECODE(vs.Get());
 	desc.PS = { g_TexturePS.data(), g_TexturePS.size() };
-    //CD3DX12_SHADER_BYTECODE(texturePS.Get());
 
 	desc.SampleMask = D3D12_DEFAULT_SAMPLE_MASK;
 
@@ -776,11 +761,7 @@ void Renderer::CreateGraphicsPipeline() {
 
 	Debugger::ErrorCheck(device->CreateGraphicsPipelineState(&desc, IID_PPV_ARGS(texturePipeline.ReleaseAndGetAddressOf())));
 
-	/*Debugger::ErrorCheck(D3DCompileFromFile(L"BasicPixelShader.hlsl", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "BasicPS", "ps_5_0",
-		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION, 0, ps.ReleaseAndGetAddressOf(), error.ReleaseAndGetAddressOf()));*/
-
 	desc.PS = { g_BasicPS.data(), g_BasicPS.size() };
-    //CD3DX12_SHADER_BYTECODE(ps.Get());
 	Debugger::ErrorCheck(device->CreateGraphicsPipelineState(&desc, IID_PPV_ARGS(pipeline.ReleaseAndGetAddressOf())));
 }
 
@@ -827,7 +808,6 @@ void Renderer::BeginDraw() {
 	cmdList->RSSetScissorRects(1, &scissorRect);
 
 	cmdList->SetPipelineState(pipeline.Get());
-	//cmdList->SetPipelineState(texturePipeline.Get());
 
 	cmdList->SetGraphicsRootSignature(rootSignature.Get());
 
