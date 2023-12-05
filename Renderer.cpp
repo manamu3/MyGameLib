@@ -749,7 +749,7 @@ void Renderer::CreateGraphicsPipeline() {
 	desc.pRootSignature = rootSignature.Get();
     desc.VS = { g_BasicVS.data(), g_BasicVS.size() };
     //CD3DX12_SHADER_BYTECODE(vs.Get());
-	desc.PS = { g_BasicPS.data(), g_BasicPS.size() };
+	desc.PS = { g_TexturePS.data(), g_TexturePS.size() };
     //CD3DX12_SHADER_BYTECODE(texturePS.Get());
 
 	desc.SampleMask = D3D12_DEFAULT_SAMPLE_MASK;
@@ -779,7 +779,7 @@ void Renderer::CreateGraphicsPipeline() {
 	/*Debugger::ErrorCheck(D3DCompileFromFile(L"BasicPixelShader.hlsl", nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, "BasicPS", "ps_5_0",
 		D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION, 0, ps.ReleaseAndGetAddressOf(), error.ReleaseAndGetAddressOf()));*/
 
-	desc.PS = { g_TexturePS.data(), g_TexturePS.size() };
+	desc.PS = { g_BasicPS.data(), g_BasicPS.size() };
     //CD3DX12_SHADER_BYTECODE(ps.Get());
 	Debugger::ErrorCheck(device->CreateGraphicsPipelineState(&desc, IID_PPV_ARGS(pipeline.ReleaseAndGetAddressOf())));
 }
