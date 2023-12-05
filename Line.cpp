@@ -1,5 +1,5 @@
 #include "Line.h"
-#include "tool/d3dx12.h"
+#include "d3dx12.h"
 #include "Debugger.h"
 
 Line::Line(float x1, float y1, float x2, float y2, ID3D12Device* device) {

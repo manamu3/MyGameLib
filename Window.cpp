@@ -3,8 +3,8 @@
 #include "Renderer.h"
 #include "FPS.h"
 #include <iostream>
-#include "tool/DirectXTK2022/Keyboard.h"
-#include "tool/DirectXTK2022/Mouse.h"
+#include "Keyboard.h"
+#include "Mouse.h"
 
 Window::Window(int width, int height, double frameRate) {
 	windowClass = {};

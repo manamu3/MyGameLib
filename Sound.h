@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tool/DirectXTK2022/Audio.h"
+#include "Audio.h"
 #include <memory>
 #include <string>
 #include <map>

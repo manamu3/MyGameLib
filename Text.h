@@ -1,7 +1,7 @@
 #pragma once
 
-#include "tool/DirectXTK2022/SpriteFont.h"
-#include "tool/DirectXTK2022/ResourceUploadBatch.h"
+#include "SpriteFont.h"
+#include "ResourceUploadBatch.h"
 #include <wrl.h>
 
 #include <string>

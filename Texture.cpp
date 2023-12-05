@@ -1,8 +1,8 @@
 #include "Texture.h"
-#include "tool/DirectXTex2022/DirectXTex.h"
+#include "DirectXTex.h"
 #include "Debugger.h"
 #include <vector>
-#include "tool/d3dx12.h"
+#include "d3dx12.h"
 #include "Renderer.h"
 #include "Box.h"
 

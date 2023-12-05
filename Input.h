@@ -1,8 +1,8 @@
 #pragma once
 
-#include "tool/DirectXTK2022/Keyboard.h"
-#include "tool/DirectXTK2022/Mouse.h"
-#include "tool/DirectXTK2022/Gamepad.h"
+#include "Keyboard.h"
+#include "Mouse.h"
+#include "Gamepad.h"
 
 enum class MouseButton {
 	LEFT_BUTTON,

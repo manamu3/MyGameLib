@@ -1,6 +1,6 @@
 #include "Shape.h"
 
-#include "tool/d3dx12.h"
+#include "d3dx12.h"
 
 #include "Debugger.h"
 

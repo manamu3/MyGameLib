@@ -1,7 +1,7 @@
 #pragma once
 
 #include <d3d12.h>
-#include "tool/DirectXTex2022/DirectXTex.h"
+#include "DirectXTex.h"
 
 #include <wrl.h>
 

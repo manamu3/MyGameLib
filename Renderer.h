@@ -5,7 +5,7 @@
 #include <dxgi1_6.h>
 #include <d3dcompiler.h>
 #include <DirectXMath.h>
-#include "tool/DirectXTK2022/GraphicsMemory.h"
+#include "GraphicsMemory.h"
 
 #include <vector>
 
